@@ -36,7 +36,7 @@ Here's how an internet of NFTs compared to the internet most of us use today loo
 | Ownership of an NFT is stored on the blockchain for anyone to **verify publicly**.                                                   | The access to ownership records of digital items is **controlled by institutions** – you must take their word for it.                                 |
 | NFTs are [smart contracts](/glossary/#smart-contract) on Ethereum. This means they **can easily be used in other smart contracts** and apps on Ethereum! | Companies with digital items usually **require their own "walled garden" infrastructure**.                                                                 |
 | Content **creators can sell their work anywhere** and can access a global market.                                           | Creators rely on the infrastructure and distribution of the platforms they use. These are often subject to terms of use and **geographical restrictions**. |
-| NFT creators **can retain ownership rights** over their own work, and program royalties directly into the NFT contract.     | Platforms, such as music **streaming services, retain the majority of profits from sales**.                                                                |
+| NFT creators can specify a royalty amount and recipient with [ERC-2981](https://eips.ethereum.org/EIPS/eip-2981), but the standard **does not enforce payment**. | Platforms, such as music **streaming services, retain the majority of profits from sales**.                                                                |
 
 ## What are NFTs used for? {#nft-use-cases}
 
@@ -53,7 +53,7 @@ NFTs are used for many things, including:
 - decentralized internet domain names
 - collateral in [decentralized finance](/glossary/#defi)
 
-Maybe you are an artist that wants to share their work using NFTs, without losing control and sacrificing your profits to intermediaries. You can create a new contract and specify the number of NFTs, their properties and a link to some specific artwork. As the artist, **you can program into the smart contract the royalties** you should be paid (e.g., transfer 5% of the sale price to the contract owner each time an NFT is transferred). You can also always prove that you created the NFTs because you own the [wallet](/glossary/#wallet) that deployed the contract. Your buyers can easily prove that they own an **authentic NFT** from your collection because their wallet [address](/glossary/#address) is associated with a token in your smart contract. They can use it across the Ethereum ecosystem, confident in its authenticity.
+Maybe you are an artist that wants to share their work using NFTs, without losing control and sacrificing your profits to intermediaries. You can create a new contract and specify the number of NFTs, their properties and a link to some specific artwork. As the artist, **you can specify royalty information in the smart contract** using ERC-2981. For example, you can specify a royalty of 5% of a resale price and a recipient address. Marketplaces can read this information, but **ERC-2981 does not enforce royalty payments**; a token transfer alone does not trigger payment. You can also always prove that you created the NFTs because you own the [wallet](/glossary/#wallet) that deployed the contract. Your buyers can easily prove that they own an **authentic NFT** from your collection because their wallet [address](/glossary/#address) is associated with a token in your smart contract. They can use it across the Ethereum ecosystem, confident in its authenticity.
 
 <Alert variant="update">
 <AlertEmoji text=":eyes:"/>
@@ -89,7 +89,7 @@ The NFT smart contract can do a few key things:
 
 When someone "creates" or "mints" an NFT, they're basically telling the smart contract to give them ownership of a particular NFT. This information is securely and publicly stored in the blockchain.
 
-Furthermore, the creator of the contract can add extra rules. They might limit how many of a certain NFT can be made or decide that they should get a small royalty fee whenever the NFT changes hands.
+Furthermore, the creator of the contract can add extra rules, such as limiting how many of a certain NFT can be made. ERC-2981 specifies royalty information, but does not automatically make every NFT transfer pay a royalty.
 
 ### NFT security {#nft-security}
 
